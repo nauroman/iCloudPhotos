@@ -11,7 +11,7 @@ while ($true) {
         Expand-Archive -LiteralPath $zipFile.FullName -DestinationPath $tempExtractPath -Force
         
         # Move only image files back to the original folder
-        Get-ChildItem -Path $tempExtractPath -Include "*.jpeg", "*.jpg", "*.png", "*.gif", "HEIC" -Recurse | 
+        Get-ChildItem -Path $tempExtractPath -Include "*.jpeg", "*.jpg", "*.png", "*.gif", "*.HEIC" -Recurse | 
             Copy-Item -Destination $folderPath -ErrorAction SilentlyContinue
 
         # Remove the zip file after processing
