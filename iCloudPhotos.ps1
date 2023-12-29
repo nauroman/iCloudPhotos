@@ -10,8 +10,8 @@ while ($true) {
         # Use a separate, safe location for extraction
         Expand-Archive -LiteralPath $zipFile.FullName -DestinationPath $tempExtractPath -Force
         
-        # Move only JPEG files back to the original folder
-        Get-ChildItem -Path $tempExtractPath -Include "*.jpeg", "*.jpg", "*.png", "*.gif" -Recurse | 
+        # Move only image files back to the original folder
+        Get-ChildItem -Path $tempExtractPath -Include "*.jpeg", "*.jpg", "*.png", "*.gif", "HEIC" -Recurse | 
             Copy-Item -Destination $folderPath -ErrorAction SilentlyContinue
 
         # Remove the zip file after processing
@@ -22,5 +22,5 @@ while ($true) {
         Write-Host "Processed zip file and cleaned up temporary folder."
     }
 
-    Start-Sleep -Seconds 3
+    Start-Sleep -Seconds 2
 }
