@@ -22,6 +22,21 @@ Finally, the script prints a message to the console indicating that the zip file
 2. Run the script in PowerShell.
 3. The script will continuously monitor the specified folder for the specified zip file. When the zip file is detected, it will be processed as described above.
 
+## Running the iCloudPhotos.ps1 script at Windows startup
+
+To have the `iCloudPhotos.ps1` script run every time Windows starts, you can use the Task Scheduler. Follow these steps:
+
+1. Open Task Scheduler (you can search for it in the Start menu).
+2. Click on "Create Basic Task...".
+3. Name the task and add a description (optional).
+4. For the "Trigger" select "When the computer starts".
+5. For the "Action" select "Start a program".
+6. In the "Program/script" field, input "powershell.exe".
+7. In the "Add arguments" field, input `-ExecutionPolicy Bypass -File "C:\path\to\iCloudPhotos.ps1"`. Replace `"C:\path\to\iCloudPhotos.ps1"` with the actual path to your `iCloudPhotos.ps1` script.
+8. Click "Next" and then "Finish".
+
+Now, the `iCloudPhotos.ps1` script should run every time Windows starts.
+
 ## Requirements
 
 * PowerShell 5.1 or later
