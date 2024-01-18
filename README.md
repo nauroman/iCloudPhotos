@@ -22,6 +22,34 @@ Finally, the script prints a message to the console indicating that the zip file
 2. Run the script in PowerShell.
 3. The script will continuously monitor the specified folder for the specified zip file. When the zip file is detected, it will be processed as described above.
 
+## How to Create a Shortcut for a PowerShell Script
+
+Follow these steps to create a desktop shortcut that runs a PowerShell script:
+
+1. **Create a New Shortcut:**
+   - Right-click on the Desktop (or any other preferred location).
+   - Choose `New > Shortcut` from the context menu.
+
+2. **Set Up the Shortcut:**
+   - In the shortcut creation wizard, enter the following command:
+     ```
+     PowerShell.exe -ExecutionPolicy Bypass -File "C:\Users\user\Desktop\System\iCloudPhotos\iCloudPhotos.ps1"
+     ```
+     - `PowerShell.exe` starts PowerShell.
+     - `-ExecutionPolicy Bypass` allows the script to run without changing the global execution policy.
+     - `-File "C:\Users\user\Desktop\System\iCloudPhotos\iCloudPhotos.ps1"` specifies the path to your script.
+
+3. **Finalize the Shortcut:**
+   - Click `Next`, name your shortcut, and click `Finish`.
+
+4. **Change the Shortcut Icon (Optional):**
+   - Right-click on the shortcut and select `Properties`.
+   - In the Properties window, click on `Change Icon`.
+   - Choose an icon from the list or specify a custom icon file.
+
+**Note:** Depending on the script content and system settings, you may need to run the shortcut as an administrator for proper execution.
+
+
 ## Running the iCloudPhotos.ps1 script at Windows startup
 
 To have the `iCloudPhotos.ps1` script run every time Windows starts, you can use the Task Scheduler. Follow these steps:
