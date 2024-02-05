@@ -2,6 +2,8 @@ $folderPath = "C:\Users\user\Downloads"
 $zipName = "iCloud Photos.zip"
 $tempExtractPath = "C:\Users\user\Downloads\iCloud Photos" # Use a dedicated folder for extraction
 
+Invoke-Item $folderPath
+
 while ($true) {
     $zipFile = Get-ChildItem -Path $folderPath -Filter $zipName -ErrorAction SilentlyContinue
     if ($zipFile) {
